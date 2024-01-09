@@ -7,9 +7,10 @@ import './animate.css';
 
 import Square from './Square';
 import ResetButton from './ResetButton';
+import WinnerLine from './Winnerline';
 
 class Board extends React.Component {
-
+    
     constructor() {
         super();
 
@@ -90,10 +91,35 @@ class Board extends React.Component {
                 onClick={this.handleOnClick.bind(this)} />)
         },this)
 
+    // Agrega la variable winnerLine que almacenará la línea ganadora
+    let winnerLine = null;
+    if (this.state.winner !== null) {
+      const lines = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6],
+      ];
+      lines.forEach(([a, b, c]) => {
+        if (
+          this.state.squares[a] &&
+          this.state.squares[a] === this.state.squares[b] &&
+          this.state.squares[a] === this.state.squares[c]
+        ) {
+          winnerLine = [a, b, c];
+        }
+      });
+    }
+
         return (
             <div>
-                <h1 style={{textAlign: 'center', fontSize: '46px', color: 'rgba(52, 152, 219,1.0)'}} className="animated flipInY">Tic-Tac-Toe</h1>
-                <h3 style={{textAlign: 'center'}} id="titlePemenang">{this.state.winner !== null ? <span>Pemenangnya <b>{this.state.winner}</b></span> : ""}</h3>
+                {/* <h1 style={{textAlign: 'center', fontSize: '46px', color: 'rgba(52, 152, 219,1.0)'}} className="animated flipInY">Tic-Tac-Toe</h1> */}
+                <img src='images/Background.png' alt='' style={{position:'absolute',width:'100%',height:'100%'}} />
+                <h1 style={{textAlign: 'center',color:'white',fontSize: '60px'}} id="titlePemenang">{this.state.winner !== null ? <span>Ganador: <b>{this.state.winner}</b></span> : ""}</h1>
                 <div className="container animated fadeInUp">
                     <div className="row">
                         <br />
@@ -101,6 +127,7 @@ class Board extends React.Component {
                     </div>
                 </div>
                 <br />
+                <WinnerLine winnerLine={winnerLine} /> {/* Agrega el componente WinnerLine */}
                 {this.state.winner !== null || this.state.full === true ? <ResetButton onClick={this.handleResetGame.bind(this)} /> : ""}
             </div>
         )

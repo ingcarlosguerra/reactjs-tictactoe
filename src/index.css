@@ -1,8 +1,8 @@
 .square-container {
-    border: 1px solid #666;
+    border: 2px solid white;
     text-align: center;
-    font-size: 50px;
-    padding: 20px;
+    font-size: 180px;
+    padding: 1px;
     cursor: pointer;
     user-select:none;
 }
@@ -13,20 +13,22 @@
 }
 
 .square-container:hover, .square-container-active {
-    background-color: rgba(231, 76, 60,1.0);
-    border: 1px solid white;
-    color: white;
+    background-color: transparent;
+    border: 2px solid white;
+    color: #FAB627;
 }
 
 /* Customize container */
-@media (max-width: 768px) {
+@media (max-width: 1920px) {
   .container {
-    max-width: 430px;
+    max-width: 1920px;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1920px) {
   .container {
-    max-width: 500px;
+    max-width: 1920px;
   }
 }
+
+
