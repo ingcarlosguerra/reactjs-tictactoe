@@ -6,7 +6,7 @@ export default class ResetButton extends React.Component {
             <div>
                 <p style={{position:'absolute',left:'45%',top:'90%'}}>
                     <button className="btn btn-lg btn-danger" onClick={this.props.onClick}>
-                        Reset Game
+                        Reiniciar Juego
                     </button>
                 </p>
             </div>
