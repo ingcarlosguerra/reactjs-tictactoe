@@ -119,7 +119,7 @@ class Board extends React.Component {
             <div>
                 {/* <h1 style={{textAlign: 'center', fontSize: '46px', color: 'rgba(52, 152, 219,1.0)'}} className="animated flipInY">Tic-Tac-Toe</h1> */}
                 <img src='images/Background.png' alt='' style={{position:'absolute',width:'100%',height:'100%',top:'0%'}} />
-                <h1 style={{textAlign: 'center',color:'#FAB627',fontSize: '70px'}} id="titlePemenang">{this.state.winner !== null ? <span>Ganador: <b>{this.state.winner}</b></span> : ""}</h1>
+                <h1 style={{position:'absolute' ,textAlign: 'center',color:'#FAB627',fontSize: '36px',top:'50%'}} id="titlePemenang">{this.state.winner !== null ? <span>Ganador: <b>{this.state.winner}</b></span> : ""}</h1>
                 <div className="container animated fadeInUp">
                     <div className="row">
                         <br />
