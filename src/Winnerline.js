@@ -21,7 +21,6 @@ const WinnerLine = ({ winnerLine }) => {
   };
   
   
-  
   // Define las coordenadas de la línea ganadora
   if (start === 0 && middle === 1 && end === 2) {
     styles.top = '17%';  //horizontal  1
