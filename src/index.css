@@ -1,11 +1,11 @@
 .square-container {
   border: 2px solid white;
   text-align: center;
-  font-size: 180px;
-  padding: 1px;
+  font-size: 200px;
+  padding: 3px;
   cursor: pointer;
   user-select: none;
-  font-family: 'Montserrat Thin', sans-serif; /* Agrega una fuente para el texto */
+  font-family: 'Montserrat Thin', sans-serif; 
   position: relative;
 }
 

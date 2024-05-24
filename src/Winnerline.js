@@ -6,8 +6,6 @@ const WinnerLine = ({ winnerLine }) => {
   }
 
   const [start, middle, end] = winnerLine;
-
-  
   const styles = {
     width: '60%',
     height: '8px',
